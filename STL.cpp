@@ -145,7 +145,8 @@ void explainDeque() {
     // begin, end, rbegin, rend, clear, insert, size, swap
 }
 
-void explainStack() {
+void explainStack() {           // LIFO
+                                // PUSH, POP AND TOP -> O(1)
     
     stack <int> st;
     st.push(1);
@@ -168,7 +169,7 @@ void explainStack() {
     st1.swap(st2);
 }
 
-void explainQueue() {
+void explainQueue() {           // FIFO
     queue <int> q;
     q.push(1);
     q.push(2);
@@ -185,7 +186,8 @@ void explainQueue() {
     cout<< q.front();
 }
 
-void explainPQ() {
+void explainPQ() {          // PUSH AND POP -> log n
+                            // TOP -> O(1)
 
     priority_queue <int> pq;
     // Maximum Heap
@@ -209,6 +211,119 @@ void explainPQ() {
 
     cout << pq.top();
 }
+
+void explainSet() {         // SORTED AND UNIQUE
+                            //log n
+    set <int> st;
+    st.insert(1);
+    st.emplace(2);
+    st.insert(2);
+    st.insert(4);
+    st.insert(3);
+
+    // Functionality of insert in vector can be used also, that only increases efficiency
+    // begin(), end(), rbeign(), rend(), size(), empty() and swap() are same as those of above
+
+    auto it = st.find(3);
+    auto it = st.find(6);
+
+    st.erase(5);
+
+    int cnt = st.count(1);
+
+    auto it = st.find(3);
+    st.erase(it);
+
+    auto it1 = st.find(2);
+    auto it2 = st.find(4);
+    st.erase(it1, it2);
+
+
+    auto it = st.lower_bound(2);
+
+    auto it = st.upper_bound(3);
+}
+
+void explainMultiSet() {            // SORTED       
+
+    // Everything is same as set, only stores duplicate elements also
+
+    multiset <int> ms;
+    ms.insert(1);
+    ms.insert(1);
+    ms.insert(1);
+
+    ms.erase(1);
+
+    int cnt = ms.count(1);
+
+    ms.erase(ms.find(1));
+
+
+    // ms.erase(ms.find(1), ms.find(1) + 2);
+
+    //rest all function same as set
+}
+
+void explainUSet() {            // UNIQUE
+                                // O(1) -> BEST AND AVERAGE
+                                // O(n) -> WORST
+
+    unordered_set <int> st;
+    // lower_bound and upper_bound function does not works, rest all functions are same as above, it does not stores in any particular order it has a better complexity than set in most cases, except some when collision happens 
+
+}
+
+void explainMap() {         //UNIQUE KEYS IN SORTED ORDER
+                            // log n
+    
+    map <int, int> mpp;
+    
+    map <int, pair<int, int>> mpp1;
+
+    map <pair<int, int>, int> mpp2;
+
+
+    mpp[1] = 2;
+    mpp.insert({3, 1});
+
+    mpp.insert({2, 4});
+
+    mpp2[{2, 3}] = 10;
+
+    for(auto it : mpp){
+        cout << it.first << " " << it.second << endl;
+    }
+
+    cout << mpp[1];
+    cout<< mpp[5];
+
+    auto it = mpp.find(3);
+    // cout << *(it).second;
+
+    auto it = mpp.find(5);
+
+    //This is the syntax
+    auto it = mpp.lower_bound(2);
+    
+    auto it = mpp.upper_bound(3);
+
+    // erase, swap, size, empty, are same as above
+
+}
+
+void explainMultiMap() {        // SORTED
+    // everything same as map, only it can store multiple keys 
+    // only mpp[key] cannot be used here 
+}
+
+void explainUnorderedMap() {        // UNIQUE
+                                    // O(1) -> BEST AND AVERAGE
+                                    // O(n) -> WORST
+    // same as set and unordered_set difference
+}
+
+
 
 int main() {
     print();
