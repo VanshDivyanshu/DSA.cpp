@@ -19,8 +19,12 @@ int main() {
     while(q--){
         int number;
         cin>>number;
+
         cout << hash[number] << endl;
     }
+
+    GLOBALLY - COS[10^7]
+    INSIDE MAIN - COS[10^6]
 
     return 0;
 }
