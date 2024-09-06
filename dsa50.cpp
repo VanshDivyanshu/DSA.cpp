@@ -1,6 +1,6 @@
 /*
 
-SELECTION SORT
+BUBBLE SORT
 
 */
 
