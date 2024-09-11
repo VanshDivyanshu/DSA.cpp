@@ -6,26 +6,28 @@ using namespace std;
 
 // } Driver Code Ends
 // User function template for C++
-class Solution {
+class Solution {};
   public:
     // Function returns the second
     // largest elements
     int print2largest(vector<int> &arr) {
         // Code Here
-        int largest = a[0];
+        int largest = -1;
         int slargest = -1;
-        for (int i = 0; i<arr.size; i++){
-            if(a[i]> largest){
+        for (int i = 0; i<arr.size(); i++){
+            if(arr[i]> largest){
                 slargest = largest;
-                largest = a[i];
+                largest = arr[i];
             }    
-            else(a[i]<largest && a[i]>slargest){
-                slargest = a[i];
+            else if (arr[i]<largest && arr[i]>slargest){
+                slargest = arr[i];
             }
-            return slargest;
+            
         }
+        return slargest;
     }
-};
+
+
 
 //{ Driver Code Starts.
 
